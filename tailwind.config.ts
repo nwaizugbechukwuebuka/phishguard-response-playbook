@@ -47,6 +47,27 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        threat: {
+          critical: "hsl(var(--threat-critical))",
+          high: "hsl(var(--threat-high))",
+          medium: "hsl(var(--threat-medium))",
+          low: "hsl(var(--threat-low))",
+          info: "hsl(var(--threat-info))",
+        },
+        status: {
+          detected: "hsl(var(--status-detected))",
+          contained: "hsl(var(--status-contained))",
+          eradicated: "hsl(var(--status-eradicated))",
+          recovered: "hsl(var(--status-recovered))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

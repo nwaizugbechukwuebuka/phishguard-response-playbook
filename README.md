@@ -1,73 +1,90 @@
-# Welcome to your Lovable project
+# Phishing Incident Response Simulation Lab
 
-## Project info
+📌 **Overview**
 
-**URL**: https://lovable.dev/projects/5461b94e-32ea-47a8-90a0-8d604a8d0aa2
+This project simulates a phishing attack and documents the incident response lifecycle from detection to recovery. The lab environment demonstrates how a SOC team investigates and mitigates phishing-related threats in a real-world setting.
 
-## How can I edit this code?
+The project includes:
 
-There are several ways of editing your application.
+- Phishing campaign simulation with Gophish
+- Log collection from email gateway, endpoints, and identity provider (Azure AD/Entra)
+- Attack timeline reconstruction & IOC extraction
+- Incident response playbooks (containment, eradication, recovery)
+- Final SOC-style incident report
 
-**Use Lovable**
+🎯 **Objectives**
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5461b94e-32ea-47a8-90a0-8d604a8d0aa2) and start prompting.
+- Simulate a phishing campaign targeting test users.
+- Detect abnormal activities via log analysis.
+- Reconstruct the phishing attack chain with IOCs.
+- Apply containment, eradication, and recovery steps.
+- Document the full response and lessons learned.
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+🏗️ **Project Structure**
+```
+Phishing-Incident-Response-Lab/
+│
+├── README.md                    # Project documentation
+├── architecture/                # Attack flow diagrams
+│   └── phishing_incident_flow.png
+│
+├── setup/                       # Setup guides
+│   ├── gophish-setup.md         # Phishing simulation setup
+│   ├── o365-log-export.md       # Exporting Office 365 / Entra logs
+│   └── sysmon-config.xml        # Sysmon config for endpoint logging
+│
+├── logs/                        # Simulated log sources
+│   ├── email-gateway-logs.csv
+│   ├── endpoint-alerts.json
+│   └── azure-ad-signins.json
+│
+├── analysis/                    # Attack analysis & timeline
+│   ├── phishing_attack_timeline.md
+│   ├── attacker_IOCs.md
+│   └── compromised_accounts.md
+│
+├── response/                    # Incident response actions
+│   ├── containment_steps.md
+│   ├── eradication_procedures.md
+│   └── recovery_actions.md
+│
+├── playbooks/                   # Response playbooks
+│   └── phishing_response_playbook.md
+│
+└── reports/                     # SOC report and lessons learned
+    ├── phishing_incident_report.pdf
+    └── lessons_learned.md
 ```
 
-**Edit a file directly in GitHub**
+🛠️ **Tools & Technologies**
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- **Phishing Simulation**: Gophish
+- **Log Collection**: Microsoft Entra ID, Sysmon, Email Gateway logs
+- **Analysis**: ELK Stack, Sigma rules, Splunk Free
+- **Documentation**: Markdown playbooks, SOC incident reports
 
-**Use GitHub Codespaces**
+📚 **Methodology**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+1. **Simulate Attack**: Launch phishing campaign via Gophish.
+2. **Detect Activity**: Collect email gateway, endpoint, and identity logs.
+3. **Analyze**: Reconstruct the attack chain & extract IOCs.
+4. **Respond**: Execute containment, eradication, and recovery steps.
+5. **Report**: Document SOC-style incident report and lessons learned.
 
-## What technologies are used for this project?
+🚀 **Getting Started**
 
-This project is built with:
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/Phishing-Incident-Response-Lab.git
+cd Phishing-Incident-Response-Lab
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+2. Follow the setup guides in `/setup` to deploy Gophish and configure log sources.
 
-## How can I deploy this project?
+3. Run the phishing campaign and capture logs.
 
-Simply open [Lovable](https://lovable.dev/projects/5461b94e-32ea-47a8-90a0-8d604a8d0aa2) and click on Share -> Publish.
+4. Document your analysis in `/analysis` and response actions in `/response`.
 
-## Can I connect a custom domain to my Lovable project?
+📄 **License**
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is licensed under the MIT License
